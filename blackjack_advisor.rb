@@ -19,7 +19,11 @@ hand = {
     "2111"]
   }
 }
-# p hand["player_hand_hard"]["hits"].include?("124")
+if hand["player_hand_hard"]["hits"].include?("124")
+  puts "hold"
+elsif hand["player_hand_hard"]["stand"].include?("124")
+  puts "stand"
+end
 deck_values = {
   "2" => 2,
   "3" => 3,
@@ -49,6 +53,7 @@ def ask_player(deck)
   #need to add up_card_dealer and user_hand, have it be a new variable
   p_d_hand_combined = "#{user_hand}" + "#{up_card_dealer}"
   p p_d_hand_combined
+
 end
 
 
