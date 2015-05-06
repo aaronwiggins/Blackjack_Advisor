@@ -15,35 +15,23 @@ deck_values = {
           #eleven: "11",}
 }
 p deck_values
-# player_hand = "#{deck_values.rand}" + "#{deck_values.rand}"
 def ask_player(deck)
   puts "what's your first card?"
   first_card_player = gets.chomp.capitalize
-    # if first_card_player == "A"
-    #
-    # end
   puts "what's your second card"
   second_card_player = gets.chomp.capitalize
-    # if second_card_player == "A"
-    #
-    # end
-  # p first_card_player
-  # p deck[2]
+  check_hard_soft_hand(first_card_player, second_card_player)
   p user_hand = deck[first_card_player] + deck[second_card_player]
 end
 
-def check_hard_soft_hand(1, 2)
-  if 1 == "A" || 2 == "A"
-    Soft
-  elsif 1 == 2
-    Pair
+def check_hard_soft_hand(a, b)
+  if a == "A" || b == "A"
+    puts "Soft"
+  elsif a == b
+    puts "Pair"
   else
-    Hard
+    puts "Hard"
   end
 end
-
-
-
-
 
 ask_player(deck_values)
