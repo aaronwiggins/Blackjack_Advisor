@@ -24,6 +24,12 @@ def ask_player(deck)
   p user_hand = deck[first_card_player] + deck[second_card_player]
 end
 
+def dealer_card(deck)
+  puts "what is the dealer's up card?"
+  up_card = gets.chomp.capitalize
+  puts up_card
+end
+
 def check_hard_soft_hand(a, b)
   if a == "A" || b == "A"
     puts "Soft"
@@ -35,3 +41,4 @@ def check_hard_soft_hand(a, b)
 end
 
 ask_player(deck_values)
+dealer_card(deck_values)
