@@ -19,7 +19,7 @@ hand = {
     "2111"]
   }
 }
-p hand["player_hand_hard"]["hits"].include?("124")
+# p hand["player_hand_hard"]["hits"].include?("124")
 deck_values = {
   "2" => 2,
   "3" => 3,
@@ -45,8 +45,10 @@ def ask_player(deck)
   p user_hand = deck[first_card_player] + deck[second_card_player]
   puts "what is the dealer's up card?"
   up_card_dealer = gets.chomp.capitalize
-  puts up_card_dealer
-#need to add up_card_dealer and user_hand, have it be a new variable
+  # puts up_card_dealer
+  #need to add up_card_dealer and user_hand, have it be a new variable
+  p_d_hand_combined = "#{user_hand}" + "#{up_card_dealer}"
+  p p_d_hand_combined
 end
 
 
