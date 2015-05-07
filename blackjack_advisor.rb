@@ -1,5 +1,5 @@
-#if you have an Ace in the hand or have a soft hand, all you need to worry about
-#is the total in the hand, not whether the Ace will be 1 or 11
+#Ace only equals 11 as of now, allows user to put in 11 instead of A for Ace
+#at the moment
 
 deck_values = {
   "2" => 2,
@@ -28,23 +28,21 @@ def ask_player(deck, hand)
   p user_hand = deck[first_card_player] + deck[second_card_player]
   puts "what is the dealer's up card?"
   up_card_dealer = gets.chomp.capitalize
-  # puts up_card_dealer
-  #need to add up_card_dealer and user_hand, have it be a new variable
   p_d_hand_combined = "#{user_hand}" + "#{up_card_dealer}"
-  # p p_d_hand_combined
   type = check_hard_soft_hand(first_card_player, second_card_player)
   optimal_move(type, p_d_hand_combined, hand)
 end
 
+#forgot to account for "double-down, otherwise split." not in the hash in yet)
 def optimal_move(a, b, hand)
   if hand["#{a}"]["hits"].include?("#{b}")
-    puts "Hold"
+    puts "You should hit"
   elsif hand["#{a}"]["stand"].include?("#{b}")
-    puts "Stand"
+    puts "You should stand"
   elsif hand["#{a}"]["double"].include?("#{b}")
-    puts "Double"
+    puts "You should double-down, otherwise hit"
   else
-    puts "Split"
+    puts "You should split"
   end
 end
 
@@ -57,7 +55,6 @@ def check_hard_soft_hand(a, b) #doesn't put pair if you have 2 Aces
     "Hard"
   end
 end
-
 
 hand = {
   "Hard" => {
@@ -107,4 +104,5 @@ hand = {
       "2210", "2211"]
     }
   }
+
 ask_player(deck_values, hand)
