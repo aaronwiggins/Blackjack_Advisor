@@ -33,7 +33,6 @@ def ask_player(deck, hand)
   optimal_move(type, p_d_hand_combined, hand)
 end
 
-#forgot to account for "double-down, otherwise split." not in the hash in yet)
 def optimal_move(a, b, hand)
   if hand["#{a}"]["hits"].include?("#{b}")
     puts "You should hit"
@@ -47,7 +46,9 @@ def optimal_move(a, b, hand)
 end
 
 def check_hard_soft_hand(a, b) #doesn't put pair if you have 2 Aces
-  if a == "A" || b == "A"
+  if a == "A" && b == "A"
+    "Pair"
+  elsif a == "A" || b == "A"
     "Soft"
   elsif a == b
     "Pair"
