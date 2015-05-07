@@ -17,4 +17,8 @@ move.
 
 -Use the set of optimum rules found [here](http://wizardofodds.com/games/blackjack/strategy/calculator/)
 
--Allow for J, Q, and K for Jack, Queen, and King. The user *should* have to enter A for Ace.
+-Allow for J, Q, and K for Jack, Queen, and King. The user *should* have to
+enter A for Ace.
+
+### To run the program...
+Type "ruby blackjack_advisor.rb" into the terminal
